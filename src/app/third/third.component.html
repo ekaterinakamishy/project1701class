@@ -1,0 +1,39 @@
+<hr>
+<div>
+    <form [formGroup]="thirdGroup">
+      <p>Заполните номер вашей карточки:</p>
+      <div>
+        <input 
+          type="text" 
+          placeholder="Номер карты"
+          formControlName="number"/>
+      </div>
+      <div
+          class="alert alert-danger"
+          *ngIf="
+            thirdGroup.controls['number'].invalid &&
+            thirdGroup.controls['number'].touched
+          "
+        >
+        </div>
+      <p>Заполните сумму пожертвования:</p>
+      <div>
+        <input 
+          type="text" 
+          placeholder="Сумма"
+          formControlName="price"/>
+      </div>
+      <div
+          class="alert alert-danger"
+          *ngIf="
+            thirdGroup.controls['price'].invalid &&
+            thirdGroup.controls['price'].touched
+          "
+        >
+        </div>
+      <p><button type="submit" [disabled]="!thirdGroup.valid">
+        Отправить пожертвование
+      </button></p>
+      <hr>
+    </form>
+</div>

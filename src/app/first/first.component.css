@@ -1,0 +1,13 @@
+.nav {
+    display: block;
+    text-decoration: none;
+    border: 1px solid black;
+    margin: 5px 5px 5px 5px;
+    padding: 5px;
+}
+.head {
+    color: rgb(0, 71, 75);
+}
+.header {
+    color: rgb(0, 71, 75);
+}
