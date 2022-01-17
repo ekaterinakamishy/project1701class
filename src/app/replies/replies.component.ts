@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Reply } from '../models/reply';
+import { RepliesService } from '../services/replies/replies.service';
 
 @Component({
   selector: 'app-replies',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./replies.component.css']
 })
 export class RepliesComponent implements OnInit {
-
-  constructor() { }
+  replies: Reply[];
+  constructor(private repliesService: RepliesService) { 
+    this.replies = repliesService.getParticipants();
+  }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,44 @@
-kkkkk
+<hr>
+<div>
+    <form [formGroup]="replyGroup" (ngSubmit)="create()">
+      Введите свое имя:
+      <div>
+        <input 
+          type="text" 
+          placeholder="Введите свое имя" 
+          formControlName="yourname" />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            replyGroup.controls['yourname'].invalid &&
+            replyGroup.controls['yourname'].touched
+          "
+        >
+        </div>
+      </div>
+      <hr>
+      Введите свой отзыв:
+      <div>
+        <input
+          type="text"
+          placeholder="Введите свой отзыв"
+          formControlName="replytext"
+        />
+        <div
+          class="alert alert-danger"
+          *ngIf="
+            replyGroup.controls['replytext'].invalid &&
+            replyGroup.controls['replytext'].touched
+          "
+        >
+        </div>
+      </div>
+      <hr>
+        <hr>
+      </div>
+      <button type="submit" [disabled]="!replyGroup.valid">
+        Отправить отзыв
+      </button>
+      <hr>
+    </form>
+</div>

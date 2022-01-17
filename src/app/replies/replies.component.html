@@ -1,1 +1,14 @@
-<p>replies works!</p>
+<hr>
+<div *ngFor="let reply of replies">
+    <div>
+      <a [routerLink]="'/reply/' + reply.id">
+        <div class="for-yourname">
+          {{ reply.brandName }}
+        </div>
+        <div class="for-replytext">
+          {{ reply.replytext }}
+        </div>
+      </a>
+    </div>
+    <hr>
+</div>
